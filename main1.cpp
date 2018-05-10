@@ -13,18 +13,18 @@ int main (){
 	ka=0,kb=0,kc=0;
 	setlocale (LC_ALL,"Russian");
 	char *mas = new char[n];
-	n=4000000000;
+	n=4000000000;						//максимальное из позволимых типов данных
 	for (i=0; i<n;i++){
-		mas[i]=char('a' + rand() % ('d' - 'a'));
+		mas[i]=char('a' + rand() % ('d' - 'a'));	//создание рандомной последовательности из элементов a,b,c
 		cout<<mas[i]<<" ";
-		if(kbhit()){
-			n=i;
+		if(kbhit()){					//окончание заполнения последовательности нажатием клавиши
+			n=i;					//изменение размера массива 
 			break;
 		}
 	
 	}
 	for(i=0; i<n;i++){
-		if( mas[i]=='a'&&mas[i+1]=='a'&&mas[i+2]=='a'){	
+		if( mas[i]=='a'&&mas[i+1]=='a'&&mas[i+2]=='a'){		//проверка триад
 			ka++;	
 		}
 		else if( mas[i]=='b'&&mas[i+1]=='b'&&mas[i+2]=='b'){
